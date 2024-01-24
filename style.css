@@ -70,17 +70,17 @@ nav a {
 .statment {
   font-family: 'Arial', sans-serif;
   text-align: center;
-  background-color:white;
+  background-color:#333;
   padding: 20px;
 }
 
 .statment p {
   font-size: 24px;
   font-weight: bold;
-  color: #5908b6;
+  color: white;
   text-transform: uppercase;
   letter-spacing: 4px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 2px 4px #453090;
 
 }
 
@@ -113,7 +113,7 @@ nav a {
 }
 
 .section-title {
-  color: #5908b6;
+  color: #453090;
   margin-bottom: 10px; /* Add space between title and list */
 }
 
