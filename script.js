@@ -13,3 +13,38 @@ console.log(myFirstname , myLastname);*/
 /*let myFirstname = 'Daniella';
 let myLastname = 'Echevestre';
 console.log(myFirstname , myLastname);*/
+
+document.addEventListener('DOMContentLoaded', function () {
+  //Creating the following 3 variables to manipulate later
+  const toggleButton = document.querySelector('.toggle-button');
+  const navbarLinks = document.querySelectorAll('.navbar-links a');
+  const toggleButtonSpan = document.querySelector('.navbar .toggle-button span');
+
+  /*This will activate the function when the toggle button is clicked. It will iterate over every link in the navbar-links div*/
+  toggleButton.addEventListener('click', function () {
+    navbarLinks.forEach(function (link) {
+      //Determines whether link has active class. If so, removes class. If not, adds class.
+      link.classList.toggle('active');
+    });
+
+    //Adds class to body, toggle button, and toggle button contents
+    document.body.classList.toggle('active');
+    toggleButton.classList.toggle('active');
+    toggleButtonSpan.classList.toggle('active');
+
+   
+    //Toggle the clicked class on each navbar link
+    navbarLinks.forEach(function (link) {
+      link.classList.remove('clicked');
+    });
+
+  });
+
+    //Closes the toggle by removing active class
+    if (document.body.classList.contains('active')) {
+      document.body.classList.remove('active');
+      toggleButton.classList.remove('active');
+      toggleButtonSpan.classList.remove('active');
+    }
+});
+
