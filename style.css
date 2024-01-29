@@ -204,3 +204,16 @@ footer {
   text-align: center;
   margin: auto;
 }
+
+/*fantasy page*/
+
+.fantasy-images {
+  text-align: center;
+}
+
+.fantasy-images img {
+  width: 200px;
+  height: auto;
+  cursor: pointer;
+  margin: 5px;
+}
