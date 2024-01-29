@@ -1,0 +1,225 @@
+/* Set the background to a dark, eerie color */
+body {
+    background-color: #0a0a0a;
+    color: #fff; /* Light text */
+}
+
+/* Creepy fonts for headings */
+h1, h2, h3 {
+    font-family: 'Creepster', cursive;
+    color: #ff6347; /* Blood red color for titles */
+}
+
+/* Add flickering effect to items */
+.item {
+    animation: flicker 3s infinite;
+}
+
+/* Adjust colors for links and navigation */
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #f2f2f2;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.toggle-button {
+    display: none;
+}
+
+@media (max-width: 700px) {
+    /* Media query styles for responsive navigation */
+    .navbar-links {
+        display: block;
+        flex-direction: column;
+        align-items: flex-end;
+        width: 100%;
+        top: 0;
+        background-color: #333;
+    }
+
+    .navbar-links a {
+        text-align: center;
+        padding: 14px 14px;
+        display: none;
+        color: #f2f2f2;
+        width: 100%;
+    }
+
+    .navbar-links a.active {
+        display: block;
+    }
+
+    .toggle-button {
+        display: block;
+        background-color: #333;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        width: 50px;
+    }
+
+    .toggle-button:hover {
+        background-color: #ddd;
+    }
+
+    .navbar .toggle-button span {
+        background-color: #ddd;
+        height: 3px;
+        width: 100%;
+        display: block;
+        margin: 5px;
+        margin-left: 0px;
+        border-radius: 13px;
+    }
+
+    .toggle-button:hover span {
+        background-color: #333;
+    }
+
+    .navbar a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+
+    .toggle-button.active {
+        background-color: #ddd;
+    }
+
+    .toggle-button.active span {
+        background-color: #333;
+    }
+
+    .navbar-links a {
+        background-color: #333;
+        color: #ddd;
+    }
+}
+
+/* Add border and shadow to images */
+.item img {
+    border: 2px solid #ff6347; /* Blood red border */
+    box-shadow: 0px 0px 10px 3px #ff0000; /* Red shadow for a spooky effect */
+    display: block; /* Ensure the image is displayed as a block element */
+    max-width: 50%; /* Set the maximum width of the image to 100% */
+    height: auto; /* Maintain aspect ratio */
+    width: 50%; /* Ensure the image takes up the full width of its container */
+    object-fit: cover; /* Maintain aspect ratio while covering the container */
+}
+
+/* Hover effect for images */
+.item img:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 0px 20px 6px #ff0000; /* Larger, more intense shadow on hover */
+}
+
+/* Flickering effect for items */
+@keyframes flicker {
+    0%   { opacity: 1; }
+    50%  { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+/* Arrange items side by side */
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.item {
+    flex: 0 1 calc(30% - 20px); /* Adjust the width of each item */
+    margin: 10px;
+}
+
+/* Center text */
+h1, p {
+    text-align: center;
+}
+
+/* Center the spooky forest image */
+.spooky-forest {
+    text-align: center;
+}
+
+/* Define the blood animation */
+@keyframes bloodDrip {
+    0% { transform: translateY(-50px); }
+    50% { transform: translateY(50px); }
+    100% { transform: translateY(-50px); }
+}
+
+/* Apply the animation to an element */
+.blood-drip {
+    position: fixed;
+    width: 3px;
+    height: 100px;
+    background-color: #ff0000; /* Blood red */
+    animation: bloodDrip 2s infinite; /* Adjust animation duration and timing as needed */
+}
+
+/* Position the blood drips */
+.drip-1 {
+    top: 0;
+    left: 10%;
+}
+
+.drip-2 {
+    top: 0;
+    left: 50%;
+}
+
+.drip-3 {
+    top: 0;
+    left: 90%;
+}
+
+/* Define the blood splatter animation */
+@keyframes bloodSplatter {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(-50px) rotate(360deg);
+        opacity: 1;
+    }
+}
+
+/* Apply the animation to an element */
+.blood-splatter {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ff0000; /* Blood red */
+    border-radius: 50%; /* Rounded shape */
+    animation: bloodSplatter 1s infinite; /* Adjust animation duration and timing as needed */
+}
+
+/* Position the blood splatter */
+.splatter-1 {
+    top: 20%;
+    left: 30%;
+}
+
+.splatter-2 {
+    top: 50%;
+    left: 60%;
+}
