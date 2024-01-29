@@ -14,6 +14,22 @@ console.log(myFirstname , myLastname);*/
 let myLastname = 'Echevestre';
 console.log(myFirstname , myLastname);*/
 
+function changeElementStyle() {
+  var element = document.getElementById('id1');
+  if (element) {
+      // Toggle between black and white
+      element.style.backgroundColor = (element.style.backgroundColor === 'black') ? 'white' : 'black';
+      element.style.color = (element.style.color === 'black') ? 'white' : 'black';
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  var button = document.getElementById('styleButton');
+  if (button) {
+      button.addEventListener('click', changeElementStyle);
+  }
+});
+
 document.addEventListener('DOMContentLoaded', function () {
   //Creating the following 3 variables to manipulate later
   const toggleButton = document.querySelector('.toggle-button');
