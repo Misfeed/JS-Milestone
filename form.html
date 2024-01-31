@@ -14,13 +14,15 @@
     <input type="text" name="Last_Name" id="LastName" placeholder="Last Name" required>
   </div>    
   <div>
-    <label for="genre">Genre</label><br>
-    <select name="genre" required>
-      <option value="horror">Horror</option>
-      <option value="manga">Manga</option>
-      <option value="fantasy">Fantasy</option>
-      <option value="mystery">Mystery</option>
-    </select>
+    <fieldset>
+      <legend>Genres interested in</legend>
+      <label>
+        <input type="checkbox" name="Interest_In" value = "Fantasy">Fantasy<br>
+        <input type="checkbox" name="Interest_In" value = "Horror">Horror<br>
+        <input type="checkbox" name="Interest_In" value = "Mystery">Mystery<br>
+        <input type="checkbox" name="Interest_In" value = "Manga">Manga
+      </label>
+    </fieldset>
   </div>
 
 
