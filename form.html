@@ -3,8 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
   <title>Interest Form</title>
-
+  <header>
+    <nav class="navbar">
+        <div class="navbar-links">
+            <button class="toggle-button">
+                <span></span> <!--Leave this span BLANK-->
+                <span></span> <!--Leave this span BLANK-->
+                <span></span> <!--Leave this span BLANK-->
+            </button>
+            <a href="index.html">Home</a> <!-- Link to Page 1 -->
+            <a href="Horror.html">Horror</a> <!-- Link to page 2 -->
+            <a href="Fantasy.html">Fantasy</a> <!-- Link to Page 3 -->
+            <a href="manga.html">Manga</a> <!-- Link to Page 4 -->
+            <a href="Mystery.html">Mystery</a> <!-- Link to page 5 -->
+            <a href="form.html">Join our Club!</a> <!-- Link to page 6 -->
+        </div>
+    </nav>
+</header>
   <div>
   <label for="FirstName">First Name</label><br>
         <input type="text" name="First_Name" id="FirstName" placeholder="First Name" required autofocus>
@@ -13,6 +30,10 @@
     <label for="LastName">Last Name</label><br>
     <input type="text" name="Last_Name" id="LastName" placeholder="Last Name" required>
   </div>    
+  <div>
+    <label for="Email">Email</label><br>
+    <input type="email" name="Email" id="Email" placeholder="Email" required>
+  </div>
   <div>
     <fieldset>
       <legend>Genres interested in</legend>
