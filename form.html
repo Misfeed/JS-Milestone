@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <title>Interest Form</title>
-  <header>
+</head>
+<body>
+
+<header>
     <nav class="navbar">
         <div class="navbar-links">
             <button class="toggle-button">
@@ -16,39 +19,99 @@
             <a href="index.html">Home</a> <!-- Link to Page 1 -->
             <a href="Horror.html">Horror</a> <!-- Link to page 2 -->
             <a href="Fantasy.html">Fantasy</a> <!-- Link to Page 3 -->
-            <a href="manga.html">Manga</a> <!-- Link to Page 4 -->
+            <a href="Manga.html">Manga</a> <!-- Link to Page 4 -->
             <a href="Mystery.html">Mystery</a> <!-- Link to page 5 -->
             <a href="form.html">Join our Club!</a> <!-- Link to page 6 -->
         </div>
     </nav>
 </header>
+
+<h1>Interest Form</h1>
+
+<form>
   <div>
-  <label for="FirstName">First Name</label><br>
-        <input type="text" name="First_Name" id="FirstName" placeholder="First Name" required autofocus>
+    <label for="FirstName">First Name</label><br>
+    <input type="text" name="First_Name" id="FirstName" placeholder="First Name" required autofocus>
   </div>
   <div>
     <label for="LastName">Last Name</label><br>
     <input type="text" name="Last_Name" id="LastName" placeholder="Last Name" required>
   </div>    
   <div>
-    <label for="Email">Email</label><br>
-    <input type="email" name="Email" id="Email" placeholder="Email" required>
-  </div>
-  <div>
     <fieldset>
       <legend>Genres interested in</legend>
-      <label>
-        <input type="checkbox" name="Interest_In" value = "Fantasy">Fantasy<br>
-        <input type="checkbox" name="Interest_In" value = "Horror">Horror<br>
-        <input type="checkbox" name="Interest_In" value = "Mystery">Mystery<br>
-        <input type="checkbox" name="Interest_In" value = "Manga">Manga
-      </label>
+      <label><input type="checkbox" name="Interest_In" value="Fantasy">Fantasy</label><br>
+      <label><input type="checkbox" name="Interest_In" value="Horror">Horror</label><br>
+      <label><input type="checkbox" name="Interest_In" value="Mystery">Mystery</label><br>
+      <label><input type="checkbox" name="Interest_In" value="Manga">Manga</label>
     </fieldset>
   </div>
+  <div>
+    <input type="submit" value="Submit">
+  </div>
+</form>
 
+<!-- Form-specific CSS styles -->
+<style>
+  /* CSS styles for form elements */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+  }
 
-</head>
-<body>
-  
+  form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  h1 {
+    text-align: center;
+    color: #333;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+  }
+
+  input[type="text"] {
+    width: calc(100% - 10px);
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type="checkbox"] {
+    width: auto;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    vertical-align: middle; /* Align checkboxes vertically */
+  }
+
+  input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+</style>
+
 </body>
 </html>
