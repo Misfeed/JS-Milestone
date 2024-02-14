@@ -7,7 +7,10 @@
     <title>Storytelling</title>
     <!-- Compatible with mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mystery.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -28,10 +31,120 @@
             </div>
         </nav>
     </header>
+    <main>
+        <h1>MYSTERIES</h1>
+          <div class="box-flexbox">
+            <div>
+              <p>
+                The complete sherlock holmes collection
+              </p>
+              <img src="https://m.media-amazon.com/images/I/91XHDtSt7qL._AC_UF1000,1000_QL80_.jpg" id = "sherlock">
+            </div>  
+            <div>
+              <p>
+                The pink panther
+              </p>
+              <img src="https://i.ebayimg.com/images/g/e8IAAOSwxRFlrgM5/s-l1600.jpg" id = "panther">
+            </div>  
+            <div>
+              <p>
+                Case closed: mystery in the mansion
+              </p>
+              <img src="https://m.media-amazon.com/images/I/71HSYFTuBxL._AC_UF1000,1000_QL80_.jpg" id = "case">
+            </div>  
+            <div>
+              <p>
+                Scooby doo
+              </p>
+              <img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/bb/Scooby_doo_mystery_incorporated_poster.jpg/220px-Scooby_doo_mystery_incorporated_poster.jpg" id = "scooby">
+            </div>  
+            <div>
+              <p>
+                Everyone on this train is a suspect
+              </p>
+              <img src="https://m.media-amazon.com/images/I/7131tdHD1UL._SY425_.jpg" id = "train">
+            </div>  
+            <div>
+              <p>
+                Blood Sisters
+              </p>
+              <img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/IOWYN4RAENBOFJKEGHSQJ57PG4.jpg&w=1200" id = "blood">
+            </div>  
+            <div>
+              <p>
+                The bullet that missed
+              </p>
+              <img src="https://www.rd.com/wp-content/uploads/2021/11/The-Bullet-That-Missed-A-Thursday-Murder-Club-Mystery-ecomm-amazon.com_.jpg?fit=700,700" id = "bullet">
+            </div>  
+            <div>
+              <p>
+                Summit Lake
+              </p>
+              <img src="https://img.secondsale.com/PRO08331858.jpg?d=255x386" id = "summit">
+            </div>  
+          </div>
+      </main>
     <footer>
         <p>&copy; 2024 Storytelling. All rights reserved.</p>
     </footer>
     <script src="script.js"></script>
+    <script>
+        function createShape(existingShapes) {
+            let shape = document.createElement('img');
+            shape.src = 'https://www.vhv.rs/dpng/f/0-2144_golden-question-mark-png-transparent-png.png';
+            shape.className = 'shape';
+            return shape;
+        }
+
+        //A function that checks the location of created elements. Function will return false if no overlapping occurs.
+        function isOverlap(element1, element2) {
+            const rect1 = element1.getBoundingClientRect();
+            const rect2 = element2.getBoundingClientRect();
+
+            return !(rect1.right < rect2.left || 
+                rect1.left > rect2.right || 
+                rect1.bottom < rect2.top || 
+                rect1.top > rect2.bottom);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            //Creating div element with class of container for the images to be spread all over the container
+            let container = document.createElement('div');
+            container.className = 'container';
+            container.style.position = 'fixed';
+            container.style.top = '0';
+            container.style.left = '0';
+            container.style.width = '100%';
+            container.style.height = '100%';
+            document.body.appendChild(container);
+
+            //amount of space available for img
+            let shapes = [];
+            const gridSize = 60; 
+
+            function addShape() {
+                let shape = createShape(shapes);
+
+                //randomly positions img in different locations in the window, images will be placed anywhere in the viewport
+                shape.style.left = `${Math.floor(Math.random() * (window.innerWidth / gridSize)) * gridSize}px`;
+                shape.style.top = `${Math.floor(Math.random() * (window.innerHeight / gridSize)) * gridSize}px`;
+
+                //create img if no img in this location
+                if (!shapes.some(s => isOverlap(s, shape))) {
+                shapes.push(shape);
+                container.appendChild(shape);
+                } else {
+                //if img in location, choose another location for placement
+                addShape();
+                }
+            }
+            //up to 60 img will be generated on load
+            for (let i = 0; i < 60; i++) {
+                addShape();
+            }
+        });
+
+    </script>
 </body>
         
 </html>

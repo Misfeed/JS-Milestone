@@ -1,0 +1,217 @@
+* {
+  margin: 0;
+
+}
+
+body {
+  background-color: brown;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+#sherlock {
+  width: 100px;
+}
+#panther {
+  width: 100px;
+}
+#case {
+  width: 100px;
+}
+#scooby {
+  width: 100px;
+}
+#train {
+  width: 100px;
+}
+#blood {
+  width: 100px;
+}
+#bullet {
+  width: 140px;
+}
+#summit {
+  width: 100px;
+}
+
+
+
+.box-flexbox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.box-flexbox div {
+  margin: 15px;
+  max-width: 200px;
+  max-height: 200px;
+  flex: 1;
+  background-color: purple;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  padding: 10px;
+}
+
+.box-flexbox div p {
+  font-weight: bold;
+  font-family: "Exo 2", sans-serif;
+}
+
+.container {
+  z-index: -1;
+}
+
+.shape {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;  
+}
+
+/*
+/*Navbar related CSS below*/
+.navbar { /*Contains navbar content*/
+  overflow: hidden;
+  background-color: #333;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #f2f2f2;
+}
+
+.navbar a { /*Individual Links*/
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.toggle-button { /*toggle does not display on large devices*/
+  display: none;
+}
+
+/*Meant for smaller screens*/
+@media (max-width: 700px) {
+
+  .navbar-links { /*Contains all the links*/
+    display: block;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+    top: 0;
+    background-color: #333;
+  }
+
+  .navbar-links a { /*Individual links*/
+    text-align: center;
+    padding: 14px 14px;
+    display: none;
+    color: #f2f2f2;
+    width: 100%;
+  }
+
+/*When toggle is clicked, links will show under*/
+  .navbar-links a.active { 
+    display: block;
+  }
+
+  .toggle-button { /*The box containing the 3 stacked lines*/
+    display: block;
+    background-color: #333;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    width: 50px;
+  }
+
+  .toggle-button:hover {
+    background-color: #ddd;
+  }
+ 
+  .navbar .toggle-button span { /*The 3 stacked lines (menu)*/
+    background-color: #ddd;
+    height: 3px;
+    width: 100%;
+    display: block;
+    margin: 5px;
+    margin-left: 0px;
+    border-radius: 13px;
+  }
+
+  .toggle-button:hover span {
+    background-color: #333;
+  }
+  
+  .navbar a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+
+/* Styles for clicked state of toggle button */
+.toggle-button.active {
+  background-color: #ddd;
+}
+
+/* Styles for clicked state of toggle button contents */
+.toggle-button.active span {
+  background-color: #333;
+}
+
+  
+/*Default style for links*/
+.navbar-links a {
+  background-color: #333;
+  color: #ddd;
+}
+
+}
+/*Navbar related CSS Above*/
+
+main h1 {
+  font-family: Exo 2; 
+  font-weight: bold; 
+  text-align: center; 
+  color: gold; 
+  font-size: 40px; 
+  background: linear-gradient(to right, transparent 30%, purple 50%, transparent 70%);
+}
+
+footer {
+  color: gold;
+  padding: 20px;
+  text-align: center;
+  margin-top: auto;
+  background: linear-gradient(to right, transparent 30%, purple 50%, transparent 70%);
+}
+
+@media (max-width: 450px) {
+  main h1 {
+    font-family: Exo 2; 
+    font-weight: bold; 
+    text-align: center; 
+    color: gold; 
+    font-size: 40px; 
+    background: linear-gradient(to right, transparent 0%, purple 50%, transparent 100%);
+  }
+
+  footer {
+    color: gold;
+    padding: 20px;
+    text-align: center;
+    margin-top: 35vh;
+    background: linear-gradient(to right, transparent 0%, purple 50%, transparent 100%);
+  }
+}
