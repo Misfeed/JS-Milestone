@@ -1,0 +1,197 @@
+
+
+/*body {
+    background-image: url('mangaimages/Busy-alleyway.jpg');
+    background-size: cover;
+}*/
+#opening{
+    color: white;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+.flex-container {
+    display: flex;
+    width: 100%; /* Set width to 100% */
+}
+
+/* Image container */
+.image-container {
+    max-width: 100%;
+    height: 50vh;
+    position: absolute; /* Positioning context for the absolute positioned text */
+}
+
+/* Text overlay */
+.text-overlay {
+    position: absolute; /* Position the text absolutely */
+    top: 50%; /* Position from the top */
+    left: 50%; /* Position from the left */
+    transform: translate(-50%, -50%); /* Center the text */
+    color: white;
+    background-color: rgba(255, 255, 255, 0); /* Semi-transparent background */
+    padding: 0px; /* Adjust padding as needed */
+    font-size: 36px;
+    text-align: center;
+}
+
+
+
+
+
+/* ----------------------------NAVBAR CSS BELOW------------------------------- */
+
+
+/*Navbar related CSS below*/
+.navbar { /*Contains navbar content*/
+    overflow: hidden;
+    background-color: #333;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #f2f2f2;
+  }
+  
+  .navbar a { /*Individual Links*/
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  .navbar a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .toggle-button { /*toggle does not display on large devices*/
+    display: none;
+  }
+  
+  /*Meant for smaller screens*/
+  @media (max-width: 700px) {
+  
+    .navbar-links { /*Contains all the links*/
+      display: block;
+      flex-direction: column;
+      align-items: flex-end;
+      width: 100%;
+      top: 0;
+      background-color: #333;
+    }
+  
+    .navbar-links a { /*Individual links*/
+      text-align: center;
+      padding: 14px 14px;
+      display: none;
+      color: #f2f2f2;
+      width: 100%;
+    }
+  
+  /*When toggle is clicked, links will show under*/
+    .navbar-links a.active { 
+      display: block;
+    }
+  
+    .toggle-button { /*The box containing the 3 stacked lines*/
+      display: block;
+      background-color: #333;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      width: 50px;
+    }
+  
+    .toggle-button:hover {
+      background-color: #ddd;
+    }
+   
+    .navbar .toggle-button span { /*The 3 stacked lines (menu)*/
+      background-color: #ddd;
+      height: 3px;
+      width: 100%;
+      display: block;
+      margin: 5px;
+      margin-left: 0px;
+      border-radius: 13px;
+    }
+  
+    .toggle-button:hover span {
+      background-color: #333;
+    }
+    
+    .navbar a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+  
+  
+  /* Styles for clicked state of toggle button */
+  .toggle-button.active {
+    background-color: #ddd;
+  }
+  
+  /* Styles for clicked state of toggle button contents */
+  .toggle-button.active span {
+    background-color: #333;
+  }
+  
+    
+  /*Default style for links*/
+  .navbar-links a {
+    background-color: #333;
+    color: #ddd;
+  }
+  
+  }
+  /*Navbar related CSS Above*/
+  
+  
+  footer {
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+    margin: auto;
+  }
+  
+  /*fantasy page*/
+  
+  .fantasy-images {
+    text-align: center;
+  }
+  
+  .fantasy-images img {
+    width: 200px;
+    height: auto;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  /*Timer & Image Styling*/
+  #timer {
+    font-family: 'Arial', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    margin: 20px;
+  }
+  
+  #imageContainer {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  #changingImage {
+    width: 300px; 
+    height: auto; 
+  }
+  
+  h3 {
+    color: blue;
+    font-size: 30px;
+  }
