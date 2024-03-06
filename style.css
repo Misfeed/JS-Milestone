@@ -196,6 +196,9 @@ img {
 }
 
 }
+.bottom-div{
+  background-color: #333;
+}
 /*Navbar related CSS Above*/
 
 
@@ -206,38 +209,25 @@ footer {
   margin: auto;
 }
 
-/*fantasy page*/
-
-.fantasy-images {
-  text-align: center;
-}
-
-.fantasy-images img {
-  width: 200px;
-  height: auto;
-  cursor: pointer;
-  margin: 5px;
-}
-
 /*Timer & Image Styling*/
-#timer {
+.bottom-div #timer {
   font-family: 'Arial', sans-serif;
   font-size: 20px;
   text-align: center;
   margin: 20px;
 }
 
-#imageContainer {
+.bottom-div #imageContainer {
   text-align: center;
   margin-top: 20px;
 }
 
-#changingImage {
+.bottom-div #changingImage {
   width: 300px; 
   height: auto; 
 }
 
-h3 {
-  color: blue;
+.bottom-div {
+  color: white;
   font-size: 30px;
 }

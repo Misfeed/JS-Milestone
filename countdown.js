@@ -35,6 +35,7 @@ function updateTimer() {
   //Display the timer
   document.getElementById('timer').innerHTML = `Countdown: ${days}d ${hours}h ${minutes}m ${seconds}s`;
 
+
   //If Monday, change the image and reset the timer
   if (now.getDay() === 1) {
     changeImage();
@@ -44,6 +45,7 @@ function updateTimer() {
     //Continue updating the timer every second
     setTimeout(updateTimer, 1000); 
   }
+
 }
 
 //Function to change the image randomly, considering the last chosen image and week
@@ -52,7 +54,7 @@ function changeImage() {
   const currentWeek = getCurrentWeek();
 
   //Make sure at least one week has passed since the last chosen image
-  if (!lastChosenInfo.week || lastChosenInfo.week !== currentWeek) {
+  if (!lastChosenInfo.week && lastChosenInfo.week !== currentWeek) {
     const availableImages = imageList.filter(img => img.src !== lastChosenInfo.src);
     const randomIndex = Math.floor(Math.random() * availableImages.length);
     const randomImage = availableImages[randomIndex];
@@ -69,6 +71,8 @@ function changeImage() {
     document.getElementById('changingImage').src = lastChosenInfo.src;
   }
 }
+
+
 
 
 //Function to get the current week
