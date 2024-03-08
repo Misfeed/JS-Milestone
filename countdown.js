@@ -35,9 +35,14 @@ function updateTimer() {
   //Display the timer
   document.getElementById('timer').innerHTML = `Countdown: ${days}d ${hours}h ${minutes}m ${seconds}s`;
 
+  let currentDay = now.getDay();
+  let currentHour = now.getHours();
+  let currentMinute = now.getMinutes();
+  let currentSeconds = now.getSeconds();
+
 
   //If Monday, change the image and reset the timer
-  if (now.getDay() === 1) {
+  if (currentDay === 1 && currentHour === 0 && currentMinute === 0 && currentSeconds === 0) {
     changeImage();
     //Restart the timer after 1 second
     setTimeout(updateTimer, 1000); 
@@ -50,29 +55,27 @@ function updateTimer() {
 
 //Function to change the image randomly, considering the last chosen image and week
 function changeImage() {
-  const lastChosenInfo = JSON.parse(localStorage.getItem('lastChosenInfo')) || {};
+  const lastImg = JSON.parse(localStorage.getItem('lastImg')) || {};
   const currentWeek = getCurrentWeek();
 
   //Make sure at least one week has passed since the last chosen image
-  if (!lastChosenInfo.week && lastChosenInfo.week !== currentWeek) {
-    const availableImages = imageList.filter(img => img.src !== lastChosenInfo.src);
-    const randomIndex = Math.floor(Math.random() * availableImages.length);
-    const randomImage = availableImages[randomIndex];
+  if (!lastImg.week && lastImg.week !== currentWeek) {
+    const availableImg = imageList.filter(img => img.src !== lastImg.src);
+    const randomIndex = Math.floor(Math.random() * availableImg.length);
+    const randomImg = availableImg[randomIndex];
 
     //Update the last chosen image and week in localStorage
-    localStorage.setItem('lastChosenInfo', JSON.stringify({
-      src: randomImage.src,
+    localStorage.setItem('lastImg', JSON.stringify({
+      src: randomImg.src,
       week: currentWeek
     }));
 
-    document.getElementById('changingImage').src = randomImage.src;
+    document.getElementById('changingImage').src = randomImg.src;
   } else {
     //If not enough time has passed, choose the last chosen image
-    document.getElementById('changingImage').src = lastChosenInfo.src;
+    document.getElementById('changingImage').src = lastImg.src;
   }
 }
-
-
 
 
 //Function to get the current week
@@ -94,14 +97,15 @@ updateTimer();
 updateTimer();
 }
 
+
 //Save the countdown information in localStorage
 window.addEventListener('beforeunload', () => {
 const seconds = parseInt(document.getElementById('timer').innerText.split(': ')[1], 10);
 localStorage.setItem('countdownInfo', JSON.stringify({ seconds }));
 
 //Save the image information in localStorage
-const lastChosenInfo = JSON.parse(localStorage.getItem('lastChosenInfo'));
-if (lastChosenInfo) {
-document.getElementById('changingImage').src = lastChosenInfo.src;
+const lastImg = JSON.parse(localStorage.getItem('lastImg'));
+if (lastImg) {
+document.getElementById('changingImage').src = lastImg.src;
 }
 });
