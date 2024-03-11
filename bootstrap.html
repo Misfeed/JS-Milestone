@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Horror Stories</title>
+  <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
 </head>
 <body>
 
@@ -26,7 +26,6 @@
         <li class="nav-item">
           <a class="nav-link" href="Fantasy.html">Fantasy</a>
         </li>
-
         <li class="nav-item">
           <a class="nav-link" href="manga.html">Manga</a>
         </li>
@@ -43,16 +42,14 @@
     </div>
   </nav>
 
- 
-    <!-- UI Component 1: Alert (Code From Bootstrap Library) -->
-    <div class="container mt-4">
-      <div class="alert alert-info" role="alert">
-        This is a Bootstrap alert.
-      </div>
+  <!-- UI Component 1: Alert (Code From Bootstrap Library) -->
+  <div class="container mt-4">
+    <div class="alert alert-info" role="alert">
+      This is a Bootstrap alert.
     </div>
+  </div>
 
-
-    <!-- UI Component 2: Card (Code From Bootstrap Library)  -->
+  <!-- UI Component 2: Card (Code From Bootstrap Library)  -->
   <div class="container mt-4">
     <div class="card" style="width: 18rem;">
       <img src="https://miro.medium.com/v2/resize:fit:5120/1*42ebJizcUtZBNIZPmmMZ5Q.jpeg" class="card-img-top" alt="Placeholder Image">
@@ -64,9 +61,37 @@
     </div>
   </div>
 
+  <!-- Content Section with Google Map -->
+  <div class="container mt-4">
+    <h2>Interactive Map</h2>
+    <div id="map" style="height: 400px;"></div>
+  </div>
 
-   <!-- Bootstrap JS -->
-   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Google Maps API -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLbsqo9EKhhpS1acn1NGqe3yUe5Netbe8&callback=initMap" async defer></script>
+
+  <!-- JavaScript code for Google Maps -->
+  <script>
+    // Initialize and customize the map
+    function initMap() {
+      // Create a map object and specify the DOM element for display.
+      var map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 47.5973496, lng: -122.287871}, // Coordinates for your desired location
+        zoom: 14 // Adjust zoom level as needed
+      });
+
+      
+      var marker = new google.maps.Marker({
+        position: {lat: 47.5973496, lng: -122.287871}, // Coordinates for your desired marker
+        map: map,
+        title: 'Marker Title' // Marker title (optional)
+      });
+    }
+  </script>
+
 </body>
 </html>
