@@ -1,158 +1,145 @@
+/* General styles */
 * {
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-    margin: 0;
-    overflow: hidden;
-    background: url('https://images.unsplash.com/photo-1617715360655-9319fdbe80e4?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat fixed; /* Set the background image */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-  
-  img {
-    margin-bottom: 70px;
-  }
-  
-  
-  .statment {
-    font-family: 'Arial', sans-serif;
-    text-align: center;
-    background-color:#333;
-    padding: 20px;
-  }
-  
-  .statment p {
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    text-shadow: 2px 2px 4px #453090;
-  
-  }
-  
-  .grid {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .item {
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: center;
-  }
-  
-  .item img {
-    max-width: 100%;
-    height: auto;
-    margin-top: 10px;
-  }
-  
 
-  /* Optional: Add responsive styles for smaller screens */
-  @media (max-width: 768px) {
-    .grid {
-        flex-direction: column;
-    }
-  }
-  
-  
-  
-  /*Navbar related CSS below*/
-  .navbar {
-    overflow: hidden;
-    background-color: #333;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #f2f2f2;
-    position: fixed; /* Add this line to make the navbar fixed at the top */
-    top: 0; /* Add this line to position the navbar at the top */
-    z-index: 1000; /* Add this line to ensure the navbar is above other content */
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+  background-image: url('https://wallpaperaccess.com/full/9483491.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Keeps the background fixed while scrolling */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header styles */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Navbar styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
 }
 
 .navbar a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: inline-block;
 }
-  
-  .navbar a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-  
-  .toggle-button { /*toggle does not display on large devices*/
-    display: none;
-  }
-  
-  /*Meant for smaller screens*/
-  @media (max-width: 700px) {
-  
-    .navbar-links { /*Contains all the links*/
-      display: block;
-      flex-direction: column;
-      align-items: flex-end;
-      width: 100%;
-      top: 0;
-      background-color: #333;
-    }
-  
-    .navbar-links a { /*Individual links*/
-      text-align: center;
-      padding: 14px 14px;
+
+.navbar a:hover {
+  background-color: #555;
+}
+
+.toggle-button {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .navbar-links {
       display: none;
-      color: #f2f2f2;
-      width: 100%;
-    }
-  
-  /*When toggle is clicked, links will show under*/
-    .navbar-links a.active { 
+  }
+
+  .toggle-button {
       display: block;
-    }
-  
-
-    
-    .navbar a:hover {
-      background-color: #ddd;
-      color: black;
-    }
-  
-    
-  /*Default style for links*/
-  .navbar-links a {
-    background-color: #333;
-    color: #ddd;
-  }
-  
-  }
-  /*Navbar related CSS Above*/
-
-
-  .fantasy-images {
-    text-align: center;
-  }
-  
-  .fantasy-images img {
-    width: 200px;
-    height: auto;
-    cursor: pointer;
-    margin: 5px;
+      background-color: #333;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
   }
 
-  main {
-    flex: 1; /* Allow the main content to take up remaining vertical space */
+  .toggle-button:hover {
+      background-color: #555;
+  }
+
+  .toggle-button span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background-color: #fff;
+      margin-bottom: 5px;
+  }
+
+  .navbar.active .navbar-links {
+      display: block;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: #333;
+  }
+
+  .navbar.active .toggle-button span {
+      background-color: #fff;
+  }
+
+  .navbar.active a {
+      display: block;
+      padding: 10px 0;
+      border-bottom: 1px solid #fff;
+  }
 }
-  
-  
 
-  /*fantasy page*/
-  
+/* Main content styles */
+.main-content {
+  padding: 20px 0;
+}
+
+.series-title {
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  font-family: 'Arial Black', sans-serif;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.fantasy-images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.fantasy-images img {
+  width: 200px;
+  height: auto;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.fantasy-images img:hover {
+  transform: scale(1.1);
+}
+
+/* Footer styles */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
