@@ -84,6 +84,10 @@ header {
   color: #324aa9;
 }
 
+.manga-info a {
+  color: #324aa9;
+}
+
 .manga-info p {
   margin: 5px 0;
 }
