@@ -4,18 +4,23 @@
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  background-color: antiquewhite
 }
 
 /* Styling for the header section */
 header {
-  background-image: url('mangaimages/japanese-store-front.avif');
+  background-image: url('mangaimages/Kyoto-Image.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   color: #fff;
   padding: 100px 20px;
   text-align: center;
-  height: 75vh;
+  height: 70vh;
+}
+
+header h1 {
+  color: antiquewhite
 }
 
 /* Styling for the ribbon section */
@@ -68,7 +73,12 @@ header {
   flex-direction: column;
   align-items: center;
   width: calc(30% - 20px);  /* Adjust width based on the number of columns */
-  box-sizing: border-box;         
+  box-sizing: border-box; 
+  transition: transform 0.3s;        
+}
+
+.manga-card:hover {
+  transform: scale(1.05);
 }
 
 /* Styling for manga card images */
@@ -77,6 +87,7 @@ header {
   height: auto;
   margin-bottom: 10px;
 }
+
 
 /* Styling for manga card information */
 .manga-info h2 {
@@ -232,7 +243,8 @@ header {
   
   
   footer {
-    background-color: #f0f0f0;
+    background-color: #333;
+    color: white;
     padding: 20px;
     text-align: center;
     margin: auto;
