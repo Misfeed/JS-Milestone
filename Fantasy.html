@@ -5,6 +5,10 @@
     <title>Storytelling</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="fantasy.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
+
 </head>
 <body>
     <header>
@@ -28,11 +32,17 @@
     <main>
         <section>
             <h1 class="series-title" >Welcome to Fantasy</h2>
-            <div class="fantasy-images">
-                <img src="https://wallpaperaccess.com/full/8039156.jpg" alt="Cover of a book">
-                <img src="https://wallpaperaccess.com/full/9483469.jpg" alt="Cover of a book">
-                <img src="https://wallpaperaccess.com/full/9483470.jpg" alt="Cover of a book">
-            </div>
+                <div class="fantasy-images">
+                    <a href="https://wallpaperaccess.com/full/8039156.jpg" data-lightbox="image1" data-title="Cover of a book">
+                        <img src="https://wallpaperaccess.com/full/8039156.jpg" alt="Cover of a book">
+                    </a>
+                    <a href="https://wallpaperaccess.com/full/9483469.jpg" data-lightbox="image1" data-title="Cover of a book">
+                        <img src="https://wallpaperaccess.com/full/9483469.jpg" alt="Cover of a book">
+                    </a>
+                    <a href="https://wallpaperaccess.com/full/9483470.jpg" data-lightbox="image1" data-title="Cover of a book">
+                        <img src="https://wallpaperaccess.com/full/9483470.jpg" alt="Cover of a book">
+                    </a>
+                </div>
         </section>
         <section>
             <h2 class="series-title">Crescent City Series</h2>
@@ -43,6 +53,25 @@
             </div>
         </section>
     </main>
+    <script>
+        // Set the option to close the lightbox when clicking outside the image
+        lightbox.option({
+            'fadeDuration': 200,
+            'resizeDuration': 200,
+            'wrapAround': true,
+            'disableScrolling': true,
+            'showImageNumberLabel': false,
+            'alwaysShowNavOnTouchDevices': true,
+            'positionFromTop': 50,
+            'maxWidth': '90%',
+            'maxHeight': '90%',
+            'disableScrolling': true,
+            'disableKeyboardNav': false,
+            'disableOuterClick': true, // This option will close the lightbox when clicking outside the image
+            'albumLabel': "Image %1 of %2"
+        });
+    </script>
+       
     <footer>
         <p>&copy; 2024 Storytelling. All rights reserved.</p>
     </footer>

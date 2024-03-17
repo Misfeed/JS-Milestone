@@ -5,7 +5,96 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <title>Interest Form</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 </head>
+<style>
+  /* CSS styles for form elements */
+body {
+  font-family: Arial, sans-serif;
+  background-image: url('https://images.unsplash.com/photo-1464802686167-b939a6910659?q=80&w=1450&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  margin: 0;
+  padding: 20px; /* Add padding to the body */
+}
+
+main {
+  max-width: 800px; /* Set max-width for content */
+  margin: 0 auto; /* Center content horizontally */
+  background-color: #fff; /* White background for content */
+  padding: 20px; /* Add padding to the content */
+  border-radius: 8px; /* Rounded corners for content */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow to content */
+}
+
+form {
+  padding: 20px; /* Add padding to the form */
+  border-radius: 8px; /* Rounded corners for form */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow to form */
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+input[type="text"] {
+  width: calc(100% - 10px);
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="checkbox"] {
+  width: auto;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  vertical-align: middle; /* Align checkboxes vertically */
+}
+
+input[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Define keyframes for the fade-in animation */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Define keyframes for the fade-out animation */
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* Apply the animation to the element */
+.fade-in {
+  animation: fadeIn 2s forwards; /* duration, fill-mode */
+  opacity: 0; /* start the element as hidden */
+}
+
+.fade-out {
+  animation: fadeOut 2s forwards; /* duration, fill-mode */
+}
+</style>
 <body>
 
 <header>
@@ -27,92 +116,61 @@
     </nav>
 </header>
 
-<h1>Interest Form</h1>
+<main>
+  <h1>Interest Form</h1>
 
-<form>
-  <div>
-    <label for="FirstName">First Name</label><br>
-    <input type="text" name="First_Name" id="FirstName" placeholder="First Name" required autofocus>
+  <div class="button">
+    <button onclick="toggleForm()">Fill out!</button>
   </div>
-  <div>
-    <label for="LastName">Last Name</label><br>
-    <input type="text" name="Last_Name" id="LastName" placeholder="Last Name" required>
-  </div>    
-  <div>
-    <fieldset>
-      <legend>Genres interested in</legend>
-      <label><input type="checkbox" name="Interest_In" value="Fantasy">Fantasy</label><br>
-      <label><input type="checkbox" name="Interest_In" value="Horror">Horror</label><br>
-      <label><input type="checkbox" name="Interest_In" value="Mystery">Mystery</label><br>
-      <label><input type="checkbox" name="Interest_In" value="Manga">Manga</label>
-    </fieldset>
-  </div>
-  <div>
-    <input type="submit" value="Submit">
-  </div>
-</form>
 
-<!-- Form-specific CSS styles -->
-<style>
-  /* CSS styles for form elements */
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    margin: 0;
-    padding: 0;
-  }
+  <section id="fadeElement" style="display:none;"> 
+    <div>
+        <form id="newForm" action="https://postman-echo.com/post" method="POST">
+            <div>
+                <label for="FirstName">First Name</label><br>
+                <input type="text" name="First_Name" id="FirstName" placeholder="First Name" required autofocus>
+            </div>
+            <div>
+                <label for="LastName">Last Name</label><br>
+                <input type="text" name="Last_Name" id="LastName" placeholder="Last Name" required>
+            </div>
+            <div>
+              <label for="Email">Email</label><br>
+              <input type="text" name="Email" id="Email" placeholder="Email" required>
+          </div>     
+            <div>
+                <fieldset>
+                    <legend>Genres interested in</legend>
+                    <label><input type="checkbox" name="Interest_In" value="Fantasy">Fantasy</label><br>
+                    <label><input type="checkbox" name="Interest_In" value="Horror">Horror</label><br>
+                    <label><input type="checkbox" name="Interest_In" value="Mystery">Mystery</label><br>
+                    <label><input type="checkbox" name="Interest_In" value="Manga">Manga</label>
+                </fieldset>
+            </div>
+            <div>
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+  </section>
+</main>
 
-  form {
-    max-width: 400px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+<script>
+  function toggleForm() {
+    var formSection = document.getElementById("fadeElement");
+    if (formSection.classList.contains('fade-in')) {
+      formSection.classList.remove('fade-in');
+      formSection.classList.add('fade-out');
+      setTimeout(function() {
+        formSection.style.display = 'none';
+        formSection.classList.remove('fade-out');
+      }, 2000); // 2000ms = 2s (duration of fade-out animation)
+    } else {
+      formSection.style.display = 'block';
+      formSection.classList.add('fade-in');
+    }
   }
-
-  h1 {
-    text-align: center;
-    color: #333;
-  }
-
-  label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #555;
-  }
-
-  input[type="text"] {
-    width: calc(100% - 10px);
-    padding: 8px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-
-  input[type="checkbox"] {
-    width: auto;
-    margin-bottom: 5px;
-    margin-right: 5px;
-    vertical-align: middle; /* Align checkboxes vertically */
-  }
-
-  input[type="submit"] {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-
-  input[type="submit"]:hover {
-    background-color: #0056b3;
-  }
-</style>
+</script>
 
 </body>
 </html>
