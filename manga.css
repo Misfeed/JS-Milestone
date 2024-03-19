@@ -63,6 +63,13 @@ header h1 {
   width: 100%; /* Adjust the width as needed */
 }
 
+/* For screens smaller than 600px (typical phone screens) */
+@media only screen and (max-width: 800px) {
+  .manga-cards-container {
+      display: block; /* Change display property to block to stack elements vertically */
+  }
+}
+
 /* Styling for individual manga cards */
 .manga-card {
   border: 1px solid #ccc;
