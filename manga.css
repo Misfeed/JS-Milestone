@@ -88,6 +88,25 @@ header h1 {
   transform: scale(1.05);
 }
 
+/* Define keyframes for fade-in animation */
+@keyframes fadeIn {
+  from {
+      opacity: 0; /* Start with opacity 0 (fully transparent) */
+  }
+  to {
+      opacity: 1; /* End with opacity 1 (fully opaque) */
+  }
+}
+
+/* Apply the fade-in animation to manga cards */
+.manga-card {
+  animation-name: fadeIn;
+  animation-duration: 7s; /* Duration of the animation */
+  animation-fill-mode: forwards; /* Keep the final state of the animation */
+  
+}
+
+
 /* Styling for manga card images */
 .manga-card img {
   max-width: 100%; /* Decreased the width */
